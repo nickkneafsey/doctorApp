@@ -87,6 +87,8 @@ app.get('/access', function(req, res) {
 
 //clinical routes
 
-app.get('/api/clinicalNotesTemplate', clinicalController.getClinicalNoteTemplates)
+app.get('/api/clinicalNotesTemplate', clinicalController.handleRoute);
+app.get('/api/patients', clinicalController.handleRoute);
+app.get('/api/clinicalNotes', clinicalController.handleRoute);
 
 

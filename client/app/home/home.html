@@ -1,3 +1,10 @@
 <div>
-  <p>test</p>
+  <p></p>
+  <select >
+  	<option value="" disabled selected>Select a Patient</option>
+  	<option ng-repeat="patient in patients">
+  		{{patient.first_name}} {{patient.last_name}}
+  	</option>
+  	
+  </select>
 </div>
