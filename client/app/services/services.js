@@ -5,19 +5,16 @@ angular.module('docdoc.services', [])
     console.log(token);
     return $http({
       method: 'GET',
-      url: 'https://drchrono.com/api/users/current',
+      url: '/api/clinicalNotesTemplate',
       headers: {
-        'Authorization': token //,
-        // 'Content-Type': 'text/plain'
-        // 'Content-Type': 'application/x-www-form-urlencoded'
-        // 'Content-Type': 'application/json'
-        
-        }
+        end: 'clinical_note_templates',
+        auth: token,
+        'Content-Type': 'application/json'
+      }
     })
     // return $http.jsonp('https://drchrono.com/api/users/current?jsoncallback=JSON_CALLBACK')
     .then(function(resp) {
-      console.log("RESP", resp)
-      return resp;
+      return resp.data;
     }).catch(function(error){
       console.log("ERR", error)
     })
