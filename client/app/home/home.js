@@ -1,11 +1,12 @@
 angular.module('docdoc.home', ['chart.js'])
 
-.controller('HomeController', function ($scope, Home) {
+.controller('HomeController', function ($scope, $location, Home) {
   var accessToken = localStorage.getItem("docdoc")
   $scope.clinicalNotesTemplate = [];
   $scope.patients = [];
   $scope.clinicalNotes = [];
   $scope.selectedPatientId;
+  $scope.selected;
 
   var getClinicalNotesTemplate = function() {
     Home.getClinicalNotesTemplate(accessToken).then(function(data) {
@@ -90,6 +91,11 @@ angular.module('docdoc.home', ['chart.js'])
   	  console.log(data);
   	  $scope.clinicalNotes = data.results;
   	})
+  }
+
+  $scope.changeWindow = function(url) {
+    console.log(url)
+    $location.url(url);
   }
   // https://drchrono.com/api/clinical_notes?date_range=2016-01-01/2016-03-14&patient=
 

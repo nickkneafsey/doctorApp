@@ -1,7 +1,5 @@
 .smallGraph {
 	width: 33%;
 	display: inline-block;
-}
-.chart-doughnut{
-	width: 33%;
+  box-sizing: border-box;
 }

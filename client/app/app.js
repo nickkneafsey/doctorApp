@@ -19,6 +19,10 @@ angular.module('docdoc', [
       templateUrl: 'app/home/home.html',
       controller: 'HomeController'
     })
+    .when('/patient/:id', {
+      templateUrl: 'app/patient/patient.html',
+      controller: 'PatientController'
+    })
     .otherwise({
       redirectTo: '/login'
     });
