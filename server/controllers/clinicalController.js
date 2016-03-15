@@ -25,22 +25,4 @@ module.exports = {
 		var options = setOptions(auth, end);
 		sendResponse(options, res);
 	}
-	// getClinicalNoteTemplates: function(req, res) {
-	// 	var auth = req.headers.auth;
-	// 	var end = req.headers.end;
-	// 	var options = setOptions(auth, end);
-	// 	sendResponse(options, res);
-	// },
-	// getPatients: function(req, res) {
-	// 	var auth = req.headers.auth;
-	// 	var end = req.headers.end;
-	// 	var options = setOptions(auth, end);
-	// 	sendResponse(options, res);
-	// },
-	// getClinicalNotes: function(req, res) {
-	// 	var auth = req.headers.auth;
-	// 	var end = req.headers.end;
-	// 	var options = setOptions(auth, end);
-	// 	sendResponse(options, res);
-	// }
 }

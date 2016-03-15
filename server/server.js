@@ -86,9 +86,14 @@ app.get('/access', function(req, res) {
 })
 
 //clinical routes
-
+//Home page routes
 app.get('/api/clinicalNotesTemplate', clinicalController.handleRoute);
 app.get('/api/patients', clinicalController.handleRoute);
 app.get('/api/clinicalNotes', clinicalController.handleRoute);
+
+//Patient Page routes
+app.get('/api/patient/:id', clinicalController.handleRoute);
+app.get('/api/chart/:id', clinicalController.handleRoute);
+
 
 

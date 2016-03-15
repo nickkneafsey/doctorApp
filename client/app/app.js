@@ -2,6 +2,7 @@ angular.module('docdoc', [
   'docdoc.services',
   'docdoc.token',
   'docdoc.home',
+  'docdoc.patient',
   'docdoc.auth',
   'ngRoute'
 ])
@@ -15,13 +16,13 @@ angular.module('docdoc', [
       templateUrl: 'app/token/token.html',
       controller: 'TokenController'
     })
-    .when('/', {
-      templateUrl: 'app/home/home.html',
-      controller: 'HomeController'
-    })
     .when('/patient/:id', {
       templateUrl: 'app/patient/patient.html',
       controller: 'PatientController'
+    })
+    .when('/', {
+      templateUrl: 'app/home/home.html',
+      controller: 'HomeController'
     })
     .otherwise({
       redirectTo: '/login'

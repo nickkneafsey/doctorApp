@@ -93,8 +93,8 @@ angular.module('docdoc.home', ['chart.js'])
   	})
   }
 
-  $scope.changeWindow = function(url) {
-    console.log(url)
+  $scope.changeWindow = function(patientId) {
+    var url = '/patient/'+patientId;
     $location.url(url);
   }
   // https://drchrono.com/api/clinical_notes?date_range=2016-01-01/2016-03-14&patient=

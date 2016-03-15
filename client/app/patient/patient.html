@@ -1,3 +1,26 @@
 <div>
+  <section class="lineGraph">
+    <canvas id="line" class="chart chart-line" chart-data="notesData"
+      chart-labels="notesLabels" chart-legend="true"
+      chart-click="onClick" >
+    </canvas> 
+  </section>
+  <aside class="patientProfile" ng-model="patient">
+    <img src="{{patient.patient_photo}}">
+    <h3>{{patient.first_name}} {{patient.last_name}}</h3>
+    <p>Chart ID: {{patient.chart_id}}</p>
+    <p>DOB: {{patient.date_of_birth}}</p>
+    <p>Gender: {{patient.gender}}</p>
+    <p>Home: {{patient.home_phone}}</p>
+    <p>Cell: {{patient.cell_phone}}</p>
+    <address>
+      <a href="mailto:{{patient.email}}">{{patient.email}}</a> <br><br>
+      {{patient.address}} <br>
+      {{patient.city}}, {{patient.state}} {{patient.zip}}
+    </address>
+    <p>Emergency Contact:</p>
+    <p>{{patient.emergency_contact_name}} ({{patient.emergency_contact_relation}})</p>
+    <p>{{patient.emergency_contact_phone}}</p>
 
+  </aside>
 </div>

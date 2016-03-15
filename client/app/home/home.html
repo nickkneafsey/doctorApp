@@ -1,9 +1,9 @@
 <div>
   <div>
-    <select ng-model="selected" ng-change="changeWindow(this.value)">
+    <select ng-model="selected" ng-change="changeWindow(selected)">
   	  <option value="" disabled selected>Select a Patient</option>
-  	  <option ng-repeat="patient in patients" value="localhost:3232/#/patient/{{patient.id}}">
-  		{{patient.first_name}} {{patient.last_name}}
+  	  <option ng-repeat="patient in patients" value="{{patient.id}}">
+  		{{patient.first_name}} {{patient.last_name}} {{patient.gender}} {{patient.date_of_birth}}
   	  </option>
     </select>
   </div>
