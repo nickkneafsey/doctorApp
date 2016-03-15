@@ -4,7 +4,7 @@ angular.module('docdoc.auth', [])
   var clearStorage = function () {
     localStorage.removeItem('doctor');
   }
-  clearStorage();
+  // clearStorage();
 
   $scope.$on('$routeChangeUpdate', clearStorage);
   $scope.$on('$routeChangeSuccess', clearStorage);

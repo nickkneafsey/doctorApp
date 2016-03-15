@@ -7,7 +7,7 @@ angular.module('docdoc.nav', [])
     $scope.doctor = JSON.parse(doc);
   }
   
-  getDoc();
+  // getDoc();
   $scope.$on('$routeChangeUpdate', getDoc);
   $scope.$on('$routeChangeSuccess', getDoc);
 })
