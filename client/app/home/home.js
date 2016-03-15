@@ -12,7 +12,7 @@ angular.module('docdoc.home', ['chart.js'])
       console.log(data);
       $scope.clinicalNotesTemplate = data.results;
     })
-  }
+  };
 
   var getPatients = function() {
   	Home.getPatients(accessToken).then(function(data){
@@ -21,7 +21,28 @@ angular.module('docdoc.home', ['chart.js'])
   	}).then(function(){
       getRaceData();
       getAgeData();
+      getGender();
     })
+  };
+
+  var genderObj = {};
+  $scope.genderLabels =[];
+  $scope.genderData = [];
+
+  var getGender = function() {
+    $scope.patients.forEach(function(patient) {
+      genderObj[patient.gender] = genderObj[patient.gender] || 0;
+      genderObj[patient.gender] ++;
+    });
+
+    for (var key in genderObj) {
+      $scope.genderData.push(genderObj[key]);
+      if (key === "") { key = "Undeclared";}
+      $scope.genderLabels.push(key);
+    }
+
+    console.log($scope.genderLabels);
+    console.log($scope.genderData);
   }
   
   var ageObj = {};

@@ -1,10 +1,4 @@
 var request = require('request');
-// var options = {
-// 	url: 'https://drchrono.com/api/clinical_note_templates',
-// 	headers: {
-// 		'Authorization': "Bearer a1kFoACNuCsHiGg95doQf927NZrpJZ"
-// 	}
-// }
 
 var setOptions = function(auth, end) {
 	return {

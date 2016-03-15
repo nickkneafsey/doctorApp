@@ -1,11 +1,12 @@
 <div>
-  
-  <select>
-  	<option value="" disabled selected>Select a Patient</option>
-  	<option ng-repeat="patient in patients">
+  <div>
+    <select>
+  	  <option value="" disabled selected>Select a Patient</option>
+  	  <option ng-repeat="patient in patients">
   		{{patient.first_name}} {{patient.last_name}}
-  	</option>
-  </select>
+  	  </option>
+    </select>
+  </div>
   <div class="smallGraph">
 	<h4>Racial Breakdown</h4>
 	<canvas id="doughnut" class="chart chart-doughnut"
@@ -17,5 +18,11 @@
   	<canvas id="bar" class="chart chart-bar"
       chart-data="ageData" chart-labels="ageLabels">
     </canvas>
+  </div>
+  <div class="smallGraph">
+  <h4>Gender Breakdown</h4>
+  <canvas id="pie" class="chart chart-pie"
+      chart-data="genderData" chart-labels="genderLabels">
+  </canvas>
   </div>
 </div>

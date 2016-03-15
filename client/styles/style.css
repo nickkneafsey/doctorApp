@@ -1,6 +1,7 @@
 .smallGraph {
 	width: 33%;
+	display: inline-block;
 }
 .chart-doughnut{
-	float: left;
+	width: 33%;
 }
