@@ -1,7 +1,26 @@
+.logo {
+  height: 2em;
+}
+
+.login {
+  margin: auto;
+  width: 60%;
+}
+
+.whiteFont {
+  color: white;
+}
+
+#signin {
+  text-align:center;
+  vertical-align: middle;
+}
+
 .smallGraph {
 	width: 33%;
 	display: inline-block;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .patientProfile {
@@ -10,10 +29,18 @@
   box-sizing: border-box;
   display: inline-block;
   padding-left: 5em;
+  padding: 3em;
+  background-color: #EAF1F5;
+  border-radius: 2em;
+}
+
+.patientProfileImage {
+  max-height: 10em;
 }
 
 .lineGraph {
   width: 75%;
   box-sizing: border-box;
   display: inline-block;
+  padding: 3em;
 }

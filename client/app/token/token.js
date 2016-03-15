@@ -6,5 +6,10 @@ angular.module('docdoc.token',[])
       $location.path('/');
     })
   }
+
+  var getUser = function() {
+    // Token
+  }
+
   getAccess();
 })

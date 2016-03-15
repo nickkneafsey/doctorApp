@@ -1,5 +1,8 @@
 <div>
   <div>
+    <h2>Patient Breakdown Dashboard</h2>
+  </div>
+  <div>
     <select ng-model="selected" ng-change="changeWindow(selected)">
   	  <option value="" disabled selected>Select a Patient</option>
   	  <option ng-repeat="patient in patients" value="{{patient.id}}">
