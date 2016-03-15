@@ -81,7 +81,6 @@ app.get('/auth/drchrono/callback',
 );
 
 app.get('/access', function(req, res) {
-  console.log(req.session.passport.user.accessToken);
   res.send(req.session.passport.user.accessToken);
 })
 
