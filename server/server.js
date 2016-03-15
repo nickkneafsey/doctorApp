@@ -80,11 +80,16 @@ app.get('/auth/drchrono/callback',
   }
 );
 
+//token page routes
 app.get('/access', function(req, res) {
   res.send(req.session.passport.user.accessToken);
-})
+});
+
+app.get('/api/doctors', clinicalController.handleRoute);
 
 //clinical routes
+
+
 //Home page routes
 app.get('/api/clinicalNotesTemplate', clinicalController.handleRoute);
 app.get('/api/patients', clinicalController.handleRoute);

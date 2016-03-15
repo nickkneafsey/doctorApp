@@ -4,6 +4,7 @@ angular.module('docdoc', [
   'docdoc.home',
   'docdoc.patient',
   'docdoc.auth',
+  'docdoc.nav',
   'ngRoute'
 ])
 .config(function ($routeProvider, $httpProvider) {

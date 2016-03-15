@@ -75,6 +75,24 @@ angular.module('docdoc.services', [])
 
 })
 .factory('Token', function ($http) {
+  var makeRequest = function(accessToken, url, end) {
+    var token ='Bearer '+accessToken;
+    return $http({
+      method: 'GET',
+      url: url,
+      headers: {
+        end: end,
+        auth: token,
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(function(resp) {
+      return resp.data;
+    }).catch(function(error){
+      console.log("ERR", error)
+    })
+  };
+
   var getAccess = function () {
     return $http({
       method: 'GET',
@@ -82,9 +100,15 @@ angular.module('docdoc.services', [])
     }).then(function(resp) {
       return resp.data;
     })
+  };
+
+  var getDoctorInfo = function(accessToken) {
+    //This is not correct. Should look for individual doc
+    return makeRequest(accessToken, '/api/doctors', 'doctors')
   }
 
   return {
-    getAccess: getAccess
+    getAccess: getAccess,
+    getDoctorInfo: getDoctorInfo
   }
 })

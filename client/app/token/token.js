@@ -3,12 +3,19 @@ angular.module('docdoc.token',[])
   var getAccess = function() {
     Token.getAccess().then(function(token) {
       localStorage.setItem('docdoc', token);
-      $location.path('/');
+      
+    }).then(function() {
+      getDoctorInfo();
     })
   }
 
-  var getUser = function() {
-    // Token
+  var getDoctorInfo = function() {
+    var token = localStorage.getItem('docdoc')
+    Token.getDoctorInfo(token).then(function(data) {
+      console.log(data);
+      localStorage.setItem('doctor', JSON.stringify(data.results[0]));
+      $location.path('/');
+    })
   }
 
   getAccess();
