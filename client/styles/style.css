@@ -89,7 +89,7 @@ h4 {
   padding: 1em;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .smallGraph {
     width: 100%;
   }
@@ -104,6 +104,9 @@ h4 {
     padding-left:3em;
     margin-left: 1em;
     margin-right: 1em;
+  }
+  .loggedInAs {
+    display: none !important;
   }
     
 }
