@@ -1,6 +1,6 @@
-angular.module('docdoc.home', ['chart.js'])
+angular.module('docdoc.home', ['chart.js', 'ngMap'])
 
-.controller('HomeController', function ($scope, $location, Home) {
+.controller('HomeController', function ($scope, $location, Home, NgMap) {
   var accessToken = localStorage.getItem("docdoc")
   $scope.clinicalNotesTemplate = [];
   $scope.patients = [];
@@ -23,8 +23,11 @@ angular.module('docdoc.home', ['chart.js'])
       getRaceData();
       getAgeData();
       getGender();
+      getAddresses();
     })
   };
+
+  //Gender Data
 
   var genderObj = {};
   $scope.genderLabels =[];
@@ -41,10 +44,9 @@ angular.module('docdoc.home', ['chart.js'])
       if (key === "") { key = "Undeclared";}
       $scope.genderLabels.push(key);
     }
-
-    console.log($scope.genderLabels);
-    console.log($scope.genderData);
   }
+
+  //Age Data
   
   var ageObj = {};
   $scope.ageLabels = [];
@@ -70,6 +72,8 @@ angular.module('docdoc.home', ['chart.js'])
     $scope.ageData.push(age);
   };
 
+  //Race Data
+
   var raceObj = {};
   $scope.raceData = [];
   $scope.raceLabels = [];
@@ -84,20 +88,39 @@ angular.module('docdoc.home', ['chart.js'])
       $scope.raceLabels.push(key);
       $scope.raceData.push(raceObj[key]);
     }
+  };
+
+  //Address Data
+  var mapObj = {};
+  $scope.addresses = [];
+
+  var getAddresses = function() {
+    $scope.patients.forEach(function(patient) {
+      if (patient.address !== "" && patient.city !== "" && patient.state !=="") {
+        $scope.addresses.push(patient.address+','+patient.city +',' + patient.state);
+      }
+    })
+    console.log("Addresses", $scope.addresses)
   }
+
+  var makeMap = function() {
+    NgMap.getMap().then(function(map){
+
+    })
+  };
+
 
   var getClinicalNotes = function() {
   	Home.getClinicalNotes(accessToken).then(function(data) {
   	  console.log(data);
   	  $scope.clinicalNotes = data.results;
   	})
-  }
+  };
 
   $scope.changeWindow = function(patientId) {
     var url = '/patient/'+patientId;
     $location.url(url);
-  }
-  // https://drchrono.com/api/clinical_notes?date_range=2016-01-01/2016-03-14&patient=
+  };
 
   getPatients();
   getClinicalNotesTemplate();
