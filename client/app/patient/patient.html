@@ -1,5 +1,6 @@
 <div>
   <section class="lineGraph">
+    <h2>Patient Pain Severity</h2>
     <canvas id="line" class="chart chart-line" chart-data="notesData"
       chart-labels="notesLabels" chart-legend="false"
       chart-click="onClick" >
@@ -8,17 +9,19 @@
   <aside class="patientProfile" ng-model="patient">
     <img class="patientProfileImage" src="{{patient.patient_photo}}">
     <h3>{{patient.first_name}} {{patient.last_name}}</h3>
-    <p>Chart ID: {{patient.chart_id}}</p>
-    <p>DOB: {{patient.date_of_birth}}</p>
-    <p>Gender: {{patient.gender}}</p>
-    <p>Home: {{patient.home_phone}}</p>
-    <p>Cell: {{patient.cell_phone}}</p>
+    <p><strong>Chart ID:</strong> {{patient.chart_id}}</p>
+    <p><strong>DOB:</strong> {{patient.date_of_birth}}</p>
+    <p><strong>Gender:</strong> {{patient.gender}}</p>
+    <p><strong>Home:</strong> {{patient.home_phone}}</p>
+    <p><strong>Cell:</strong> {{patient.cell_phone}}</p>
     <address>
+      <strong>Email:</strong>
       <a href="mailto:{{patient.email}}">{{patient.email}}</a> <br><br>
+      <strong>Address:</strong>
       {{patient.address}} <br>
       {{patient.city}}, {{patient.state}} {{patient.zip}}
     </address>
-    <p>Emergency Contact:</p>
+    <p><strong>Emergency Contact:</strong></p>
     <p>{{patient.emergency_contact_name}} ({{patient.emergency_contact_relation}})</p>
     <p>{{patient.emergency_contact_phone}}</p>
   </aside>

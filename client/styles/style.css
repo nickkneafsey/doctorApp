@@ -24,7 +24,7 @@
 }
 
 .patientProfile {
-  width: 25%;
+  width: 20%;
   float: right;
   box-sizing: border-box;
   display: inline-block;
@@ -32,6 +32,7 @@
   padding: 3em;
   background-color: #EAF1F5;
   border-radius: 2em;
+  margin-right: 3em;
 }
 
 .patientProfileImage {
@@ -49,4 +50,19 @@
   box-sizing: border-box;
   padding: 3em;
   width: 100%;
+}
+
+.map {
+  padding: 3em;
+  text-align: center;
+}
+
+ng-map {
+  width: 85%;
+  height: 33em;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: Impact, Charcoal, sans-serif;
 }

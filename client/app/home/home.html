@@ -28,8 +28,9 @@
       chart-data="genderData" chart-labels="genderLabels">
   </canvas>
   </div>
-  <div>
-    <ng-map zoom="13" center="Mountain View, CA" style="height:600px">
+  <div class="map">
+    <h4>Patient Locations</h4>
+    <ng-map zoom="11" center="Mountain View, CA" >
     <marker ng-repeat="address in addresses" position="{{address}}"></marker>
   </div>
 </div>
