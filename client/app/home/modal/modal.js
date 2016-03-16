@@ -7,6 +7,7 @@ angular.module('docdoc.modal', [])
     console.log("dismiss");
     $element.modal('hide');
     close(null, 200);
+    $('.modal-backdrop').remove();
   };
 
   $scope.findByChartId = function(id) {
@@ -15,9 +16,13 @@ angular.module('docdoc.modal', [])
       if (patients[i].chart_id === upper) {
         console.log("Bingo");
         changeWindow(patients[i].id);
+        return;
       }
     }
+    alert("Patient with Chart ID not found");
     $scope.dismissModal();
+
+
   }
 
   var changeWindow = function(patientId) {
