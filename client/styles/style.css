@@ -8,6 +8,7 @@
 }
 .heading {
   padding-left: 3em;
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 .whiteFont {
@@ -74,10 +75,16 @@ ng-map {
 }
 
 .title {
-  font-family: Impact, Charcoal, sans-serif;
+  /*font-family: Impact, Charcoal, sans-serif;*/
+  font-family: Tahoma, Geneva, sans-serif;
 }
 
 .box {
   background-color: white;
   width: 60%;
+}
+
+h4 {
+  font-family: Tahoma, Geneva, sans-serif;
+  padding: 1em;
 }

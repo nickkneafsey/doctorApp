@@ -133,7 +133,7 @@ angular.module('docdoc.home', ['chart.js', 'ngMap', 'angularModalService', 'docd
       }
     }).then(function(modal) {
       modal.element.modal();
-      modal.close.then(function(result) {
+      modal.close.then(function() {
         // $scope.message = result ? "You said Yes" : "You said No";
         console.log("Closed Successfully")
       });

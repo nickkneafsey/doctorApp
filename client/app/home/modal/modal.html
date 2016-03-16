@@ -1,7 +1,32 @@
-<div>
-  <div class="box">
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Search for Patient by chart ID</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="chartId" class="col-sm-2 control-label">Chart ID</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="chartId" placeholder="ex. HAJE000001" ng-model="chartId">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="dismissModal()" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button type="button" ng-click="findByChartId()" class="btn btn-primary" data-dismiss="modal">Enter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div>
+  <div>
     <input placeholder="Search By Chart ID">
     <a href="" ng-click="dismissModal()">Close</a>
   </div>
   
-</div>
+</div> -->
