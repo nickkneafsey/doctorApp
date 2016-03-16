@@ -1,6 +1,6 @@
-angular.module('docdoc.home', ['chart.js', 'ngMap'])
+angular.module('docdoc.home', ['chart.js', 'ngMap', 'angularModalService', 'docdoc.modal'])
 
-.controller('HomeController', function ($scope, $location, Home, NgMap) {
+.controller('HomeController', function ($scope, $location, Home, NgMap, ModalService) {
   var accessToken = localStorage.getItem("docdoc")
   $scope.clinicalNotesTemplate = [];
   $scope.patients = [];
@@ -109,19 +109,39 @@ angular.module('docdoc.home', ['chart.js', 'ngMap'])
     })
   };
 
-
+  //Clinical Notes
   var getClinicalNotes = function() {
   	Home.getClinicalNotes(accessToken).then(function(data) {
   	  console.log(data);
   	  $scope.clinicalNotes = data.results;
   	})
   };
-
+  
+  //Relocation
   $scope.changeWindow = function(patientId) {
     var url = '/patient/'+patientId;
     $location.url(url);
   };
 
+  //Modal
+  $scope.showAModal = function() {
+    ModalService.showModal({
+      templateUrl: "app/home/modal/modal.html",
+      controller: "ModalController",
+      inputs: {
+        patients: $scope.patients
+      }
+    }).then(function(modal) {
+      modal.element.modal();
+      modal.close.then(function(result) {
+        // $scope.message = result ? "You said Yes" : "You said No";
+        console.log("Closed Successfully")
+      });
+    });
+
+  };
+
   getPatients();
   getClinicalNotesTemplate();
-});
+})
+

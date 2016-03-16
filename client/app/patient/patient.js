@@ -14,7 +14,6 @@ angular.module('docdoc.patient', ['chart.js'])
 
   var getPatientsClinicalNotes = function () {
     Patient.getPatientsClinicalNotes(accessToken, patientId).then(function(data) {
-      console.log("Clinical Notes", data);
       $scope.clinicalNotes = data.results;
     }).then(function() {
       sortClinicalNotes();

@@ -45,7 +45,6 @@ angular.module('docdoc.services', [])
       }
     })
     .then(function(resp) {
-      console.log("RESP",resp);
       return resp.data;
     }).catch(function(error){
       console.log("ERR", error)

@@ -76,3 +76,8 @@ ng-map {
 .title {
   font-family: Impact, Charcoal, sans-serif;
 }
+
+.box {
+  background-color: white;
+  width: 60%;
+}
