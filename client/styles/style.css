@@ -6,6 +6,9 @@
   margin: auto;
   width: 60%;
 }
+.heading {
+  padding-left: 3em;
+}
 
 .whiteFont {
   color: white;
@@ -61,6 +64,13 @@ ng-map {
   width: 85%;
   height: 33em;
   margin: 0 auto;
+}
+
+.note {
+  background-color: #EAF1F5;
+  padding: .1em;
+  margin: .3em;
+  border-radius: .2em
 }
 
 .title {

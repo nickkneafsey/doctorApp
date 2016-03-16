@@ -64,7 +64,6 @@ passport.use(new OAuth2Strategy({
     var obj = {}
     obj['accessToken'] = accessToken;
     done(null, obj);
-    // done(null, profile);
   }
 ));
 
@@ -98,6 +97,7 @@ app.get('/api/clinicalNotes', clinicalController.handleRoute);
 //Patient Page routes
 app.get('/api/patient/:id', clinicalController.handleRoute);
 app.get('/api/chart/:id', clinicalController.handleRoute);
+app.get('/api/appointment/:id', clinicalController.handleRoute)
 
 
 

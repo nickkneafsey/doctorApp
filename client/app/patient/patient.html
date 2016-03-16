@@ -18,18 +18,20 @@
     <address>
       <strong>Email:</strong>
       <a href="mailto:{{patient.email}}">{{patient.email}}</a> <br><br>
-      <strong>Address:</strong>
+      <strong>Address:</strong><br>
       {{patient.address}} <br>
       {{patient.city}}, {{patient.state}} {{patient.zip}}
     </address>
-    <p><strong>Emergency Contact:</strong></p>
-    <p>{{patient.emergency_contact_name}} ({{patient.emergency_contact_relation}})</p>
-    <p>{{patient.emergency_contact_phone}}</p>
+    <address>
+    <strong>Emergency Contact:</strong>
+    {{patient.emergency_contact_name}} ({{patient.emergency_contact_relation}})
+    {{patient.emergency_contact_phone}}
+    </address>
   </aside>
   <section class="notes">
     <h3>Recent Appointment Notes</h3>
-    <div ng-repeat="note in clinicalNotes">
-      {{note.value}}
-    </div>
+    <span class="note" ng-repeat="note in clinicalNotes">
+      {{note.value}} 
+    </span>
   </section>
 </div>

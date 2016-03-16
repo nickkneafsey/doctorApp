@@ -57,18 +57,26 @@ angular.module('docdoc.services', [])
     var end = 'patients/' + patientId;
 
     return makeRequest(accessToken, url, end);
-  }
+  };
 
-  getPatientsClinicalNotes = function(accessToken, patientId) {
+  var getPatientsClinicalNotes = function(accessToken, patientId) {
     var url = '/api/chart/' + patientId;
     var end = 'clinical_note_field_values?date_range=2016-01-01/2016-03-20&patient=' + patientId;
     
+    return makeRequest(accessToken, url, end);
+  };
+
+  var getAppointment = function(accessToken, appointmentId) {
+    var url = '/api/appointment/' + appointmentId;
+    var end = 'appointments/' + appointmentId;
+
     return makeRequest(accessToken, url, end);
   }
 
   return {
     getPatientData: getPatientData,
-    getPatientsClinicalNotes: getPatientsClinicalNotes
+    getPatientsClinicalNotes: getPatientsClinicalNotes,
+    getAppointment: getAppointment
   }
 })
 .factory('Auth', function ($http, $window) {
