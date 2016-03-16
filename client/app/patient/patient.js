@@ -30,7 +30,6 @@ angular.module('docdoc.patient', ['chart.js'])
       // console.log(parseInt(note.value))
       var val = parseInt(note.value);
       if (!isNaN(val)) {
-        console.log("VAL",val);
         notesObj[note.appointment] = val;
       }
     })
@@ -42,8 +41,6 @@ angular.module('docdoc.patient', ['chart.js'])
 
     $scope.notesData.push(notesData);
 
-    console.log($scope.notesLabels);
-    console.log($scope.notesData);
   };
 
 
