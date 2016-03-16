@@ -6,8 +6,9 @@ angular.module('docdoc.modal', [])
   $scope.dismissModal = function() {
     console.log("dismiss");
     $element.modal('hide');
-    close(null, 200);
     $('.modal-backdrop').remove();
+    close(null, 200);
+    
   };
 
   $scope.findByChartId = function(id) {
@@ -16,6 +17,7 @@ angular.module('docdoc.modal', [])
       if (patients[i].chart_id === upper) {
         console.log("Bingo");
         changeWindow(patients[i].id);
+        $scope.dismissModal();
         return;
       }
     }
