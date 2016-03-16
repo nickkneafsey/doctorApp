@@ -66,7 +66,7 @@ angular.module('docdoc.home', ['chart.js', 'ngMap'])
     });
 
     for (var key in ageObj) {
-      $scope.ageLabels.push(key);
+      $scope.ageLabels.push(key + '-' + (parseInt(key)+9));
       age.push(ageObj[key]);
     }
     $scope.ageData.push(age);

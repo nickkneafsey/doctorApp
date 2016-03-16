@@ -1,14 +1,16 @@
 <div>
   <div>
-    <h2>Patient Breakdown Dashboard</h2>
-  </div>
-  <div>
-    <select ng-model="selected" ng-change="changeWindow(selected)">
-  	  <option value="" disabled selected>Select a Patient</option>
-  	  <option ng-repeat="patient in patients" value="{{patient.id}}">
-  		{{patient.first_name}} {{patient.last_name}} {{patient.gender}} {{patient.date_of_birth}}
-  	  </option>
-    </select>
+    <div>
+      <h2>Patient Breakdown Dashboard</h2>
+    </div>
+    <div>
+      <select ng-model="selected" ng-change="changeWindow(selected)">
+    	  <option value="" disabled selected>Select a Patient</option>
+    	  <option ng-repeat="patient in patients" value="{{patient.id}}">
+    		{{patient.first_name}} {{patient.last_name}} {{patient.gender}} {{patient.date_of_birth}}
+    	  </option>
+      </select>
+    </div>
   </div>
   <div class="smallGraph">
 	<h4>Racial Breakdown</h4>
