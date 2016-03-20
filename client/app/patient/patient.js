@@ -5,6 +5,7 @@ angular.module('docdoc.patient', ['chart.js'])
   var patientId = $routeParams.id;
   $scope.patient;
   $scope.clinicalNotes = [];
+  $scope.colours = ['#3cba54', '#f4c20d', '#db3236', '#4885ed', '#ac00e6', '#ff9900'];
   var getPatientData = function () {
     Patient.getPatientData(accessToken, patientId).then(function(data) {
       console.log("Patient", data);

@@ -1,35 +1,40 @@
 <div>
-  <div class="heading">
-    <div>
-      <h2>Patient Breakdown Dashboard</h2>
+  <div class="topPart">
+    <div class="heading">
+      <div>
+        <h2 class="whiteFont">Patient Breakdown Dashboard</h2>
+      </div>
+      <div>
+        <a ng-click="showAModal()">Search By Chart ID</a><br>
+        <select ng-model="selected" ng-change="changeWindow(selected)">
+      	  <option value="" disabled selected>Select a Patient</option>
+      	  <option ng-repeat="patient in patients" value="{{patient.id}}">
+      		{{patient.first_name}} {{patient.last_name}} {{patient.gender}} {{patient.date_of_birth}}
+      	  </option>
+        </select>
+      </div>
     </div>
-    <div>
-      <a ng-click="showAModal()">Search By Chart ID</a><br>
-      <select ng-model="selected" ng-change="changeWindow(selected)">
-    	  <option value="" disabled selected>Select a Patient</option>
-    	  <option ng-repeat="patient in patients" value="{{patient.id}}">
-    		{{patient.first_name}} {{patient.last_name}} {{patient.gender}} {{patient.date_of_birth}}
-    	  </option>
-      </select>
+    <div class="smallGraph">
+  	<h4 class="whiteFont">Racial Breakdown</h4>
+  	<canvas id="doughnut" class="chart chart-doughnut"
+      	chart-data="raceData" chart-labels="raceLabels"
+        colours="colours">
+  	</canvas>
     </div>
-  </div>
-  <div class="smallGraph">
-	<h4>Racial Breakdown</h4>
-	<canvas id="doughnut" class="chart chart-doughnut"
-    	chart-data="raceData" chart-labels="raceLabels">
-	</canvas>
-  </div>
-  <div class="smallGraph">
-  	<h4>Age Breakdown</h4>
-  	<canvas id="bar" class="chart chart-bar"
-      chart-data="ageData" chart-labels="ageLabels">
+    <div class="smallGraph">
+    	<h4 class="whiteFont">Age Breakdown</h4>
+    	<canvas id="bar" class="chart chart-bar whiteFont"
+        chart-data="ageData" chart-labels="ageLabels"
+        colours="colours">
+      </canvas>
+    </div>
+    <div class="smallGraph">
+    <h4 class="whiteFont">Gender Breakdown</h4>
+    <canvas id="pie" class="chart chart-pie"
+        chart-data="genderData" chart-labels="genderLabels"
+        colours="colours">
     </canvas>
-  </div>
-  <div class="smallGraph">
-  <h4>Gender Breakdown</h4>
-  <canvas id="pie" class="chart chart-pie"
-      chart-data="genderData" chart-labels="genderLabels">
-  </canvas>
+    </div>
   </div>
   <div class="map">
     <h4>Patient Locations</h4>

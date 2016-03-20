@@ -7,6 +7,7 @@ angular.module('docdoc.home', ['chart.js', 'ngMap', 'angularModalService', 'docd
   $scope.clinicalNotes = [];
   $scope.selectedPatientId;
   $scope.selected;
+  $scope.colours = ['#3cba54', '#f4c20d', '#db3236', '#4885ed', '#ac00e6', '#ff9900'];
 
   var getClinicalNotesTemplate = function() {
     Home.getClinicalNotesTemplate(accessToken).then(function(data) {

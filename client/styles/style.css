@@ -3,12 +3,16 @@
 }
 
 .login {
-  margin: auto;
+  margin-top: 55px;
+  text-align: center;
   width: 60%;
 }
 .heading {
+  padding-top: 50px;
   padding-left: 3em;
   font-family: Tahoma, Geneva, sans-serif;
+  width:72%;
+  display: inline-block;
 }
 
 .whiteFont {
@@ -16,8 +20,14 @@
 }
 
 #signin {
-  text-align:center;
+  padding-top:120px;
+  text-align: center;
   vertical-align: middle;
+}
+
+.topPart {
+  background-color: black;
+
 }
 
 .smallGraph {
@@ -25,22 +35,34 @@
 	display: inline-block;
   box-sizing: border-box;
   text-align: center;
+  background-color: black;
+  padding-bottom: 2em;
+}
+.patientInfo {
+  width: 90%;
+  text-align: center;
 }
 
 .patientProfile {
+  top: 55px;
+  right : 0px;
+  position: fixed;
   width: 20%;
   float: right;
   box-sizing: border-box;
-  display: inline-block;
-  padding-left: 5em;
-  padding: 3em;
-  background-color: #EAF1F5;
+  
+  padding: 1.5em;
+  background-color: #D8F1DD;
   border-radius: 2em;
   margin-right: 3em;
 }
 
 .patientProfileImage {
-  max-height: 10em;
+  /*max-height: 10em;*/
+  border-radius: 1em;
+  width: 85%;
+  text-align: center;
+  margin: auto;
 }
 
 .lineGraph {
@@ -53,7 +75,7 @@
 .notes {
   box-sizing: border-box;
   padding: 3em;
-  width: 100%;
+  width: 75%;
 }
 
 .map {
@@ -68,7 +90,7 @@ ng-map {
 }
 
 .note {
-  background-color: #EAF1F5;
+  background-color: #D8F1DD;
   padding: .1em;
   margin: .3em;
   border-radius: .2em
@@ -88,6 +110,7 @@ h4 {
   font-family: Tahoma, Geneva, sans-serif;
   padding: 1em;
 }
+
 
 @media screen and (max-width: 800px) {
   .smallGraph {

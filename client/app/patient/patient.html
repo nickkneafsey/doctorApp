@@ -6,11 +6,12 @@
   <section class="lineGraph">
     <canvas id="line" class="chart chart-line" chart-data="notesData"
       chart-labels="notesLabels" chart-legend="false"
-      chart-click="onClick" >
+      chart-click="onClick" colours="colours">
     </canvas> 
   </section>
   <aside class="patientProfile" ng-model="patient">
     <img class="patientProfileImage" src="{{patient.patient_photo}}">
+    <div class="patientInfo">
     <h3>{{patient.first_name}} {{patient.last_name}}</h3>
     <p><strong>Chart ID:</strong> {{patient.chart_id}}</p>
     <p><strong>DOB:</strong> {{patient.date_of_birth}}</p>
@@ -29,6 +30,7 @@
     {{patient.emergency_contact_name}} ({{patient.emergency_contact_relation}}) <br>
     {{patient.emergency_contact_phone}}
     </address>
+    </div>
   </aside>
   <section class="notes">
     <h3>Recent Appointment Notes</h3>
